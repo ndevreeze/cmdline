@@ -30,8 +30,8 @@
    2. or else given in config file
    3. or else use default value"
   [args cli-options]
-  (let [opts    (cli/parse-opts args cli-options)
-        opts-nd (cli/parse-opts args cli-options :no-defaults true)]
+  (let [opts    (cli/parse-opts args cli-options :in-order true)
+        opts-nd (cli/parse-opts args cli-options :no-defaults true :in-order true)]
     (if-let [config-file (:config (:options opts))]
       (let [config-path (expand-home config-file)]
         (if (fs/exists? config-path)
@@ -42,9 +42,10 @@
                            cfg-opt            ;; override with values in config
                            (:options opts-nd) ;; override with explicit cmdline args
                            {:msg (format "config found: %s" config-path)})}))
-          (assoc opts :msg (format "config path given but does not exist: %s" config-path))))
+          (assoc opts :msg (format "config path given but does not exist: %s" config-path)))        )
       (assoc opts :msg "config option not given"))))
 
+;; TODO - when warnings found (like not-existing config-file), the function should know about this, so it can log the warning. Basically the :msg key.
 (defn check-and-exec
   "Check command-line arguments and if ok execute the given function.
    System/exit when the function is done, wrt hanging child-processes.
