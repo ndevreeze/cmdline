@@ -13,11 +13,11 @@ Combine named command line arguments from three sources:
 
 Leiningen/Boot
 
-    [ndevreeze/cmdline "0.1.2"]
+    [ndevreeze/cmdline "0.2.0"]
 
 Clojure CLI/deps.edn
 
-    ndevreeze/cmdline {:mvn/version "0.1.2"}
+    ndevreeze/cmdline {:mvn/version "0.2.0"}
 
 [![Clojars Project](https://img.shields.io/clojars/v/ndevreeze/cmdline.svg)](https://clojars.org/ndevreeze/cmdline)
 
