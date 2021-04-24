@@ -17,6 +17,11 @@
 
   :repl-options {:init-ns ndevreeze.cmdline}
 
+  :codox
+  {:output-path "docs/api"
+   :metadata {:doc/format :markdown}
+   :source-uri "https://github.com/ndevreeze/cmdline/blob/master/{filepath}#L{line}"}
+
   :repositories [["releases" {:url "https://clojars.org/repo/"
                               :creds :gpg}]])
 

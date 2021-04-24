@@ -70,6 +70,11 @@ or:
 
 * No known errors, see Github/issues.
 
+### API docs
+
+* See See codox generated [API docs](https://ndevreeze.github.io/cmdline/api/index.html). 
+* Or: https://cljdoc.org/d/ndevreeze/cmdline/0.2.0/doc/readme
+
 ## Related and similar projects (libraries)
 
 * https://github.com/clojure/tools.cli - main library for parsing options.
