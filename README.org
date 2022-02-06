@@ -1,0 +1,130 @@
+#+TITLE: cmdline
+
+Small wrapper around command line parsing with clojure.tools.cli
+* Why?
+   :PROPERTIES:
+   :CUSTOM_ID: why
+   :END:
+
+Combine named command line arguments from three sources: 1. Explicitly
+given on the command line. 2. Given in a user defined config file. 3.
+Defaults as given in the source code.
+
+* Installation
+   :PROPERTIES:
+   :CUSTOM_ID: installation
+   :END:
+
+Leiningen/Boot
+
+#+BEGIN_EXAMPLE
+    [ndevreeze/cmdline "0.2.0"]
+#+END_EXAMPLE
+
+Clojure CLI/deps.edn
+
+#+BEGIN_EXAMPLE
+    ndevreeze/cmdline {:mvn/version "0.2.0"}
+#+END_EXAMPLE
+
+[[https://clojars.org/ndevreeze/cmdline][https://img.shields.io/clojars/v/ndevreeze/cmdline.svg]]
+
+* Usage
+   :PROPERTIES:
+   :CUSTOM_ID: usage
+   :END:
+
+Require:
+
+#+BEGIN_EXAMPLE
+    (ns my.namespace
+      (:require [nl.nicodevreeze.cmdline :as cl]))
+            
+#+END_EXAMPLE
+
+Define the command line options:
+
+#+BEGIN_EXAMPLE
+    (def cli-options
+      [["-c" "--config CONFIG" "Config file"
+        :default "~/.config/my-program/my-program.edn"]
+       ["-h" "--help" "Show this help"]
+       ["-p" "--port PORT" "TCP port to use"
+        :default 1234 :parse-fn #(Integer/parseInt %)]
+       ["-v" "--verbose" "Verbose output"]])
+#+END_EXAMPLE
+
+Define the worker function:
+
+#+BEGIN_EXAMPLE
+    (defn do-script
+      "Main script"
+      [opt arguments ctx]
+      (when (:verbose opt)
+        (output-some-more)))
+#+END_EXAMPLE
+
+Small -main function:
+
+#+BEGIN_EXAMPLE
+    (defn -main [& args]
+      (cl/check-and-exec "Description of script"
+                         cli-options do-script args ctx))
+#+END_EXAMPLE
+
+Ctx/context can be anything, mostly a map.
+
+* Developing
+   :PROPERTIES:
+   :CUSTOM_ID: developing
+   :END:
+
+** Testing
+    :PROPERTIES:
+    :CUSTOM_ID: testing
+    :END:
+
+#+BEGIN_EXAMPLE
+    $ lein midje
+#+END_EXAMPLE
+
+or:
+
+#+BEGIN_EXAMPLE
+    $ lein repl (or start in Cider)
+    (use 'midje.repl)
+    (autotest)
+#+END_EXAMPLE
+
+** Bugs
+    :PROPERTIES:
+    :CUSTOM_ID: bugs
+    :END:
+
+-  No known errors, see Github/issues.
+
+** API docs
+    :PROPERTIES:
+    :CUSTOM_ID: api-docs
+    :END:
+
+-  See See codox generated
+   [[https://ndevreeze.github.io/cmdline/api/index.html][API docs]].
+-  Or: https://cljdoc.org/d/ndevreeze/cmdline/0.2.0/doc/readme
+
+* Related and similar projects (libraries)
+   :PROPERTIES:
+   :CUSTOM_ID: related-and-similar-projects-libraries
+   :END:
+
+-  https://github.com/clojure/tools.cli - main library for parsing
+   options.
+
+* License
+   :PROPERTIES:
+   :CUSTOM_ID: license
+   :END:
+
+Copyright © 2021 Nico de Vreeze
+
+Distributed under the Eclipse Public License, the same as Clojure.
