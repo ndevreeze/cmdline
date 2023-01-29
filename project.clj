@@ -6,7 +6,13 @@
   
   :dependencies [[org.clojure/clojure "1.11.1"]
                  [org.clojure/tools.cli "1.0.214"]
-                 [clj-commons/fs "1.6.310"]]
+                 [clj-commons/fs "1.6.310"]
+
+                 ;; 2023-01-29: solve dependencies
+                 [org.apache.httpcomponents/httpclient "4.5.9" :exclusions [commons-logging]]
+                 [commons-codec "1.15"]
+
+                 ]
 
   :target-path "target/%s"
 
