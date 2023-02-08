@@ -9,7 +9,7 @@
                  [clj-commons/fs "1.6.310"]
 
                  ;; 2023-01-29: solve dependencies
-                 [org.apache.httpcomponents/httpclient "4.5.9" :exclusions [commons-logging]]
+                 [org.apache.httpcomponents/httpclient "4.5.14" :exclusions [commons-logging]]
                  [commons-codec "1.15"]
 
                  ]
