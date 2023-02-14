@@ -19,7 +19,7 @@
   :resource-paths ["resources"]
   
   :profiles {:dev {:dependencies [[midje "1.10.9"]
-                                  [clj-commons/pomegranate "1.2.1"]]}}
+                                  [clj-commons/pomegranate "1.2.23"]]}}
 
   :repl-options {:init-ns ndevreeze.cmdline}
 
