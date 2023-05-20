@@ -14,3 +14,4 @@ pom.xml.asc
 .cpcache/
 /README.html
 git-add-commit.sh
+_git-clean-changes.sh
