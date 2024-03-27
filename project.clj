@@ -4,9 +4,9 @@
   :license {:name "EPL-2.0 OR GPL-2.0-or-later WITH Classpath-exception-2.0"
             :url "https://www.eclipse.org/legal/epl-2.0/"}
   
-  :dependencies [[org.clojure/clojure "1.11.1"]
-                 [org.clojure/tools.cli "1.0.219"]
-                 [clj-commons/fs "1.6.310"]
+  :dependencies [[org.clojure/clojure "1.11.2"]
+                 [org.clojure/tools.cli "1.1.230"]
+                 [clj-commons/fs "1.6.311"]
 
                  ;; 2023-01-29: solve dependencies
                  [org.apache.httpcomponents/httpclient "4.5.14" :exclusions [commons-logging]]
