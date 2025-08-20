@@ -6,7 +6,7 @@
   
   :dependencies [[org.clojure/clojure "1.12.1"]
                  [org.clojure/tools.cli "1.1.230"]
-                 [clj-commons/fs "1.6.311"]
+                 [clj-commons/fs "1.6.312"]
 
                  ;; 2023-01-29: solve dependencies
                  [org.apache.httpcomponents/httpclient "4.5.14" :exclusions [commons-logging]]
@@ -19,7 +19,7 @@
   :resource-paths ["resources"]
   
   :profiles {:dev {:dependencies [[midje "1.10.10"]
-                                  [clj-commons/pomegranate "1.2.24"]]}}
+                                  [clj-commons/pomegranate "1.2.25"]]}}
 
   :repl-options {:init-ns ndevreeze.cmdline}
 
