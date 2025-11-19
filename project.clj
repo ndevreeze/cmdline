@@ -10,7 +10,7 @@
 
                  ;; 2023-01-29: solve dependencies
                  [org.apache.httpcomponents/httpclient "4.5.14" :exclusions [commons-logging]]
-                 [commons-codec "1.19.0"]
+                 [commons-codec "1.20.0"]
 
                  ]
 
