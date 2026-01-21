@@ -5,7 +5,7 @@
             :url "https://www.eclipse.org/legal/epl-2.0/"}
   
   :dependencies [[org.clojure/clojure "1.12.4"]
-                 [org.clojure/tools.cli "1.2.245"]
+                 [org.clojure/tools.cli "1.3.250"]
                  [clj-commons/fs "1.6.312"]
 
                  ;; 2023-01-29: solve dependencies
