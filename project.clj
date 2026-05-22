@@ -4,13 +4,13 @@
   :license {:name "EPL-2.0 OR GPL-2.0-or-later WITH Classpath-exception-2.0"
             :url "https://www.eclipse.org/legal/epl-2.0/"}
   
-  :dependencies [[org.clojure/clojure "1.12.4"]
+  :dependencies [[org.clojure/clojure "1.12.5"]
                  [org.clojure/tools.cli "1.4.256"]
                  [clj-commons/fs "1.6.312"]
 
                  ;; 2023-01-29: solve dependencies
                  [org.apache.httpcomponents/httpclient "4.5.14" :exclusions [commons-logging]]
-                 [commons-codec "1.21.0"]
+                 [commons-codec "1.22.0"]
 
                  ]
 
@@ -19,7 +19,7 @@
   :resource-paths ["resources"]
   
   :profiles {:dev {:dependencies [[midje "1.10.10"]
-                                  [clj-commons/pomegranate "1.3.26"]]}}
+                                  [clj-commons/pomegranate "1.3.27"]]}}
 
   :repl-options {:init-ns ndevreeze.cmdline}
 
