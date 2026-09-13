@@ -1,7 +1,6 @@
 (ns ndevreeze.cmdline
   (:require [clojure.tools.cli :as cli]
             [me.raynes.fs :as fs]
-            [clojure.java.io :as io]
             [clojure.string :as str]
             [clojure.edn :as edn]))
 
@@ -16,7 +15,7 @@
   "My version of fs/expand-home, using normalized in this namespace.
    Make sure we return a File object"
   [path]
-  (if path
+  (when path
     (fs/file (fs/expand-home (normalized path)))))
 
 ;; 2020-06-07: Maybe climatic or similar makes this one obsolete?
