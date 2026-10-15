@@ -7,11 +7,11 @@
   :dependencies [[org.clojure/clojure "1.12.6"]
                  [org.clojure/tools.cli "1.4.256"]
                  [clj-commons/fs "1.6.312"]
-                 [nrepl "1.7.0"]
+                 [nrepl "1.8.0"]
 
                  ;; 2023-01-29: solve dependencies
                  [org.apache.httpcomponents/httpclient "4.5.14" :exclusions [commons-logging]]
-                 [commons-codec "1.22.1"]
+                 [commons-codec "1.23.0"]
 
                  ]
 
